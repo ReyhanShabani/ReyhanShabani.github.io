@@ -13,10 +13,13 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap CSS-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <!-- Custom CSS for RSH -->
+        <!-- RSH Custom CSS -->
         <style>
+            /* RSH Electrical Custom Styles */
             :root {
                 --rsh-blue: #0056a6;
                 --rsh-orange: #ff6600;
@@ -24,54 +27,44 @@
                 --rsh-light: #f8f9fa;
             }
             
-            .rsh-bg-blue {
-                background-color: var(--rsh-blue) !important;
-            }
-            
-            .rsh-bg-orange {
-                background-color: var(--rsh-orange) !important;
-            }
-            
-            .rsh-text-blue {
-                color: var(--rsh-blue) !important;
-            }
-            
-            .rsh-text-orange {
-                color: var(--rsh-orange) !important;
-            }
+            .rsh-bg-blue { background-color: var(--rsh-blue) !important; }
+            .rsh-bg-orange { background-color: var(--rsh-orange) !important; }
+            .rsh-text-blue { color: var(--rsh-blue) !important; }
+            .rsh-text-orange { color: var(--rsh-orange) !important; }
             
             .btn-primary {
                 background-color: var(--rsh-blue);
                 border-color: var(--rsh-blue);
             }
-            
             .btn-primary:hover {
                 background-color: #004085;
                 border-color: #004085;
             }
-            
             .btn-secondary {
                 background-color: var(--rsh-orange);
                 border-color: var(--rsh-orange);
             }
-            
             .btn-secondary:hover {
                 background-color: #cc5500;
                 border-color: #cc5500;
             }
             
-            .navbar-brand img {
-                height: 50px;
+            #mainNav {
+                background-color: var(--rsh-blue) !important;
+            }
+            #mainNav .navbar-brand {
+                color: white !important;
+                font-size: 1.5rem;
             }
             
             header.masthead {
-                padding-top: 10rem;
-                padding-bottom: calc(10rem - 72px);
                 background: linear-gradient(to bottom, rgba(0, 86, 166, 0.8) 0%, rgba(0, 86, 166, 0.8) 100%), url("https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: scroll;
                 background-size: cover;
+                padding-top: 10rem;
+                padding-bottom: 6rem;
             }
             
             .product-card {
@@ -82,12 +75,10 @@
                 height: 100%;
                 margin-bottom: 30px;
             }
-            
             .product-card:hover {
                 transform: translateY(-5px);
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             }
-            
             .product-img {
                 height: 200px;
                 background-color: #f5f5f5;
@@ -96,23 +87,15 @@
                 justify-content: center;
                 overflow: hidden;
             }
-            
             .product-img img {
                 max-height: 100%;
                 max-width: 100%;
                 object-fit: contain;
                 padding: 15px;
             }
+            .product-card-body { padding: 1.5rem; }
             
-            .product-card-body {
-                padding: 1.5rem;
-            }
-            
-            .member-section {
-                background-color: #f8f9fa;
-                padding: 80px 0;
-            }
-            
+            .member-section { background-color: #f8f9fa; padding: 80px 0; }
             .member-login-box {
                 background: white;
                 padding: 40px;
@@ -127,7 +110,6 @@
                 align-items: center;
                 justify-content: center;
             }
-            
             .timeline-image.rsh-timeline h4 {
                 color: white;
                 margin: 0;
@@ -136,30 +118,40 @@
                 padding: 10px;
             }
             
-            .rsh-stat {
-                text-align: center;
-                padding: 20px;
-            }
-            
+            .rsh-stat { text-align: center; padding: 20px; }
             .rsh-stat-number {
                 font-size: 3rem;
                 font-weight: 700;
                 color: var(--rsh-blue);
                 display: block;
             }
+            .rsh-stat-label { font-size: 1.2rem; color: var(--rsh-dark); }
             
-            .rsh-stat-label {
-                font-size: 1.2rem;
-                color: var(--rsh-dark);
+            .footer {
+                background-color: var(--rsh-blue) !important;
+                color: white !important;
+            }
+            .footer a { color: rgba(255, 255, 255, 0.8) !important; }
+            .footer a:hover { color: white !important; }
+            
+            @media (max-width: 768px) {
+                .product-img { height: 180px; }
+                .member-login-box { padding: 25px; }
+                .rsh-stat-number { font-size: 2.5rem; }
+            }
+            @media (max-width: 576px) {
+                .product-img { height: 150px; }
+                .member-login-box { padding: 20px; }
+                .rsh-stat-number { font-size: 2rem; }
             }
         </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top rsh-bg-blue" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="#page-top">
-                    <img src="https://via.placeholder.com/150x50/0056a6/ffffff?text=RSH+Electrical" alt="RSH Electrical Logo" />
+                    <i class="fas fa-bolt me-2"></i>RSH Electrical
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -170,13 +162,14 @@
                         <li class="nav-item"><a class="nav-link" href="#services">Products</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Solutions</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Our Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#members">Members</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
@@ -187,6 +180,7 @@
                 <a class="btn btn-secondary btn-xl text-uppercase ms-3" href="#contact">Get in Touch</a>
             </div>
         </header>
+        
         <!-- Services/Products Section-->
         <section class="page-section" id="services">
             <div class="container">
@@ -201,7 +195,7 @@
                             <i class="fas fa-bolt fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Circuit Protection</h4>
-                        <p class="text-muted">Circuit breakers, fuses, surge protectors, and safety switches designed to protect your electrical systems from overloads and short circuits.</p>
+                        <p class="text-muted">Circuit breakers, fuses, surge protectors, and safety switches designed to protect your electrical systems.</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
@@ -209,7 +203,7 @@
                             <i class="fas fa-plug fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Wiring & Connectors</h4>
-                        <p class="text-muted">High-quality cables, connectors, terminals, and wiring accessories for reliable electrical connections in any environment.</p>
+                        <p class="text-muted">High-quality cables, connectors, terminals, and wiring accessories for reliable electrical connections.</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
@@ -217,7 +211,7 @@
                             <i class="fas fa-solar-panel fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Energy Solutions</h4>
-                        <p class="text-muted">Energy-efficient lighting, solar components, and power management systems to reduce consumption and costs.</p>
+                        <p class="text-muted">Energy-efficient lighting, solar components, and power management systems to reduce consumption.</p>
                     </div>
                 </div>
             </div>
@@ -231,52 +225,49 @@
                     <h3 class="section-subheading text-muted">Browse our top-quality electrical components</h3>
                 </div>
                 <div class="row">
-                    <!-- Product 1 -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="product-card">
                             <div class="product-img">
-                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Industrial Circuit Breaker">
+                                <i class="fas fa-bolt fa-4x rsh-text-blue"></i>
                             </div>
                             <div class="product-card-body">
                                 <h4>Industrial Circuit Breakers</h4>
                                 <p class="text-muted">High-capacity circuit breakers for industrial applications with advanced protection features.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="fw-bold rsh-text-blue">From $149.99</span>
-                                    <button class="btn btn-sm btn-primary">Inquire</button>
+                                    <button class="btn btn-sm btn-primary inquire-btn" data-product="Industrial Circuit Breakers">Inquire</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Product 2 -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="product-card">
                             <div class="product-img">
-                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Electrical Conduit">
+                                <i class="fas fa-plug fa-4x rsh-text-blue"></i>
                             </div>
                             <div class="product-card-body">
                                 <h4>Electrical Conduit Systems</h4>
                                 <p class="text-muted">Durable PVC and metal conduits for safe wiring protection in commercial and residential buildings.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="fw-bold rsh-text-blue">From $89.99</span>
-                                    <button class="btn btn-sm btn-primary">Inquire</button>
+                                    <button class="btn btn-sm btn-primary inquire-btn" data-product="Electrical Conduit Systems">Inquire</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Product 3 -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="product-card">
                             <div class="product-img">
-                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="LED Lighting">
+                                <i class="fas fa-lightbulb fa-4x rsh-text-blue"></i>
                             </div>
                             <div class="product-card-body">
                                 <h4>Commercial LED Lighting</h4>
                                 <p class="text-muted">Energy-efficient LED fixtures for commercial spaces with long lifespan and excellent lumen output.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="fw-bold rsh-text-blue">From $34.99</span>
-                                    <button class="btn btn-sm btn-primary">Inquire</button>
+                                    <button class="btn btn-sm btn-primary inquire-btn" data-product="Commercial LED Lighting">Inquire</button>
                                 </div>
                             </div>
                         </div>
@@ -300,43 +291,43 @@
                 </div>
                 <ul class="timeline">
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="RSH Founding" /></div>
+                        <div class="timeline-image"><i class="fas fa-building fa-3x text-white p-4"></i></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2005-2008</h4>
                                 <h4 class="subheading">Our Humble Beginnings</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">RSH Electrical Products was founded by three electrical engineers with a vision to provide high-quality electrical components to the local market. Starting from a small warehouse, we served our first 50 clients with dedication.</p></div>
+                            <div class="timeline-body"><p class="text-muted">RSH Electrical Products was founded by three electrical engineers with a vision to provide high-quality electrical components to the local market.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="RSH Expansion" /></div>
+                        <div class="timeline-image"><i class="fas fa-expand fa-3x text-white p-4"></i></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2012</h4>
                                 <h4 class="subheading">Regional Expansion</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">With growing demand, we expanded our operations to serve the entire region, opening three new distribution centers and increasing our product range to over 500 electrical items.</p></div>
+                            <div class="timeline-body"><p class="text-muted">We expanded our operations to serve the entire region, opening three new distribution centers and increasing our product range.</p></div>
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="RSH Innovation" /></div>
+                        <div class="timeline-image"><i class="fas fa-leaf fa-3x text-white p-4"></i></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2018</h4>
                                 <h4 class="subheading">Embracing Green Energy</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Recognizing the shift towards sustainable energy, we launched our green energy product line, specializing in solar components and energy-efficient lighting solutions.</p></div>
+                            <div class="timeline-body"><p class="text-muted">Recognizing the shift towards sustainable energy, we launched our green energy product line specializing in solar components.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="RSH Today" /></div>
+                        <div class="timeline-image"><i class="fas fa-laptop fa-3x text-white p-4"></i></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2023</h4>
                                 <h4 class="subheading">Digital Transformation</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">We launched our online platform and member portal, making it easier for our clients to access products, technical specifications, and personalized support.</p></div>
+                            <div class="timeline-body"><p class="text-muted">We launched our online platform and member portal, making it easier for clients to access products and technical support.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
@@ -360,4 +351,305 @@
                 <div class="row text-center">
                     <div class="col-md-3 col-sm-6">
                         <div class="rsh-stat">
-                            <span
+                            <span class="rsh-stat-number">18+</span>
+                            <span class="rsh-stat-label">Years Experience</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="rsh-stat">
+                            <span class="rsh-stat-number">1200+</span>
+                            <span class="rsh-stat-label">Products</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="rsh-stat">
+                            <span class="rsh-stat-number">350+</span>
+                            <span class="rsh-stat-label">Clients Served</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="rsh-stat">
+                            <span class="rsh-stat-number">24/7</span>
+                            <span class="rsh-stat-label">Technical Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Team Section-->
+        <section class="page-section" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase rsh-text-blue">Our Leadership Team</h2>
+                    <h3 class="section-subheading text-muted">Meet the experts behind RSH Electrical Products</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <div class="rounded-circle mx-auto bg-secondary d-flex align-items-center justify-content-center" style="width: 14rem; height: 14rem;">
+                                <i class="fas fa-user-tie fa-5x text-white"></i>
+                            </div>
+                            <h4 class="mt-3">Robert Smith</h4>
+                            <p class="text-muted">CEO & Founder</p>
+                            <p class="text-muted small">25+ years in electrical engineering and product development</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <div class="rounded-circle mx-auto bg-secondary d-flex align-items-center justify-content-center" style="width: 14rem; height: 14rem;">
+                                <i class="fas fa-user-tie fa-5x text-white"></i>
+                            </div>
+                            <h4 class="mt-3">Sarah Johnson</h4>
+                            <p class="text-muted">Head of Product Development</p>
+                            <p class="text-muted small">Specializes in circuit protection and energy efficiency solutions</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <div class="rounded-circle mx-auto bg-secondary d-flex align-items-center justify-content-center" style="width: 14rem; height: 14rem;">
+                                <i class="fas fa-user-tie fa-5x text-white"></i>
+                            </div>
+                            <h4 class="mt-3">Henry Wilson</h4>
+                            <p class="text-muted">Technical Director</p>
+                            <p class="text-muted small">Expert in industrial electrical systems and safety compliance</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Members Section -->
+        <section class="member-section" id="members">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase rsh-text-blue">RSH Member Portal</h2>
+                    <h3 class="section-subheading text-muted">Exclusive access for our business partners and clients</h3>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="member-login-box">
+                            <h3 class="mb-4">Member Login</h3>
+                            <form id="memberLoginForm">
+                                <div class="mb-3">
+                                    <label for="memberUsername" class="form-label">Username or Email</label>
+                                    <input type="text" class="form-control" id="memberUsername" placeholder="Enter your username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="memberPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="memberPassword" placeholder="Enter your password" required>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Login to Member Portal</button>
+                                <div class="mt-3 text-center">
+                                    <a href="#!" class="text-decoration-none">Forgot password?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="member-login-box">
+                            <h3 class="mb-4">Member Benefits</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="fas fa-check-circle rsh-text-blue me-2"></i> Access to wholesale pricing</li>
+                                <li class="mb-3"><i class="fas fa-check-circle rsh-text-blue me-2"></i> Download technical specifications and manuals</li>
+                                <li class="mb-3"><i class="fas fa-check-circle rsh-text-blue me-2"></i> Priority technical support</li>
+                                <li class="mb-3"><i class="fas fa-check-circle rsh-text-blue me-2"></i> Track orders and view order history</li>
+                                <li class="mb-3"><i class="fas fa-check-circle rsh-text-blue me-2"></i> Access to exclusive product ranges</li>
+                                <li class="mb-3"><i class="fas fa-check-circle rsh-text-blue me-2"></i> Request custom quotes online</li>
+                            </ul>
+                            <div class="mt-4">
+                                <p class="mb-3">Not a member yet?</p>
+                                <a href="#contact" class="btn btn-outline-primary">Request Member Access</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase rsh-text-blue">Contact Us</h2>
+                    <h3 class="section-subheading text-muted">Get in touch for product inquiries, technical support, or partnership opportunities</h3>
+                </div>
+                
+                <div class="row mb-5">
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="rsh-stat">
+                            <i class="fas fa-map-marker-alt fa-3x rsh-text-blue mb-3"></i>
+                            <h4>Our Location</h4>
+                            <p class="text-muted">123 Industrial Park Drive<br>Electra City, EC 10101</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="rsh-stat">
+                            <i class="fas fa-phone fa-3x rsh-text-blue mb-3"></i>
+                            <h4>Phone Numbers</h4>
+                            <p class="text-muted">Sales: (555) 123-4567<br>Support: (555) 123-4568</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="rsh-stat">
+                            <i class="fas fa-envelope fa-3x rsh-text-blue mb-3"></i>
+                            <h4>Email Addresses</h4>
+                            <p class="text-muted">Sales: sales@rshelectrical.com<br>Support: support@rshelectrical.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <form id="contactForm">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Your Name *" required />
+                            </div>
+                            <div class="form-group mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="Your Email *" required />
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <textarea class="form-control" id="message" placeholder="Your Message *" rows="6" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start text-white">Copyright &copy; RSH Electrical Products 2023</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end text-white">
+                        <a class="link-light text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-light text-decoration-none" href="#!">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- RSH Custom JS -->
+        <script>
+            // RSH Electrical Custom JavaScript
+            document.addEventListener('DOMContentLoaded', function() {
+                // Product inquiry buttons
+                document.querySelectorAll('.inquire-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const productName = this.getAttribute('data-product');
+                        const messageField = document.getElementById('message');
+                        
+                        if (messageField) {
+                            messageField.value = `I'm interested in: ${productName}\n\nPlease send me more information about this product including pricing and specifications.`;
+                            
+                            // Scroll to contact section
+                            document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
+                            
+                            // Highlight the product
+                            setTimeout(() => {
+                                alert(`Inquiry prepared for: ${productName}\n\nYou can now customize your message in the contact form.`);
+                            }, 500);
+                        }
+                    });
+                });
+                
+                // Member login form
+                const memberLoginForm = document.getElementById('memberLoginForm');
+                if (memberLoginForm) {
+                    memberLoginForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        const username = document.getElementById('memberUsername').value;
+                        const password = document.getElementById('memberPassword').value;
+                        
+                        if (!username || !password) {
+                            alert('Please enter both username and password.');
+                            return;
+                        }
+                        
+                        const submitBtn = this.querySelector('button[type="submit"]');
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = 'Logging in...';
+                        submitBtn.disabled = true;
+                        
+                        // Simulate login process
+                        setTimeout(() => {
+                            alert(`Demo Login Successful!\n\nUsername: ${username}\n\nIn a real system, this would redirect to the member dashboard.`);
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                            this.reset();
+                        }, 1500);
+                    });
+                }
+                
+                // Contact form
+                const contactForm = document.getElementById('contactForm');
+                if (contactForm) {
+                    contactForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        const submitBtn = this.querySelector('button[type="submit"]');
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = 'Sending...';
+                        submitBtn.disabled = true;
+                        
+                        // Simulate sending
+                        setTimeout(() => {
+                            alert('Thank you for your message!\n\nIn a real system, this would be sent to our sales team who will contact you shortly.');
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                            this.reset();
+                        }, 1500);
+                    });
+                }
+                
+                // Smooth scrolling
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        if (this.getAttribute('href') === '#' || this.getAttribute('href') === '#!') return;
+                        
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            e.preventDefault();
+                            window.scrollTo({
+                                top: target.offsetTop - 70,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
