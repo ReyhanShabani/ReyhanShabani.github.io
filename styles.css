@@ -1,0 +1,217 @@
+/* ===========================================
+   RSH ELECTRICAL PRODUCTS CUSTOM STYLES
+   =========================================== */
+
+/* Brand Color Variables */
+:root {
+    --rsh-blue: #0056a6;
+    --rsh-orange: #ff6600;
+    --rsh-dark: #2c3e50;
+    --rsh-light: #f8f9fa;
+}
+
+/* RSH Color Classes */
+.rsh-bg-blue {
+    background-color: var(--rsh-blue) !important;
+}
+
+.rsh-bg-orange {
+    background-color: var(--rsh-orange) !important;
+}
+
+.rsh-text-blue {
+    color: var(--rsh-blue) !important;
+}
+
+.rsh-text-orange {
+    color: var(--rsh-orange) !important;
+}
+
+/* Override Primary Button Color for RSH */
+.btn-primary {
+    background-color: var(--rsh-blue);
+    border-color: var(--rsh-blue);
+}
+
+.btn-primary:hover {
+    background-color: #004085;
+    border-color: #004085;
+}
+
+.btn-secondary {
+    background-color: var(--rsh-orange);
+    border-color: var(--rsh-orange);
+}
+
+.btn-secondary:hover {
+    background-color: #cc5500;
+    border-color: #cc5500;
+}
+
+/* Navigation Overrides for RSH */
+#mainNav {
+    background-color: var(--rsh-blue) !important;
+}
+
+#mainNav .navbar-brand {
+    color: white !important;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: #ffc800 !important;
+}
+
+/* Masthead Override for RSH */
+header.masthead {
+    background: linear-gradient(to bottom, rgba(0, 86, 166, 0.8) 0%, rgba(0, 86, 166, 0.8) 100%), url("https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Product Cards */
+.product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    margin-bottom: 30px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+    height: 200px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-img img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    padding: 15px;
+}
+
+.product-card-body {
+    padding: 1.5rem;
+}
+
+/* Member Section */
+.member-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.member-login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Timeline Override for RSH */
+.timeline-image.rsh-timeline {
+    background-color: var(--rsh-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-image.rsh-timeline h4 {
+    color: white;
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+/* Stats Section */
+.rsh-stat {
+    text-align: center;
+    padding: 20px;
+}
+
+.rsh-stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--rsh-blue);
+    display: block;
+}
+
+.rsh-stat-label {
+    font-size: 1.2rem;
+    color: var(--rsh-dark);
+}
+
+/* Footer Override for RSH */
+.footer {
+    background-color: var(--rsh-blue) !important;
+    color: white !important;
+}
+
+.footer a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.footer a:hover {
+    color: white !important;
+}
+
+/* Contact Section Override */
+section#contact {
+    background-color: #f8f9fa;
+    background-image: none;
+}
+
+section#contact .section-heading {
+    color: var(--rsh-blue) !important;
+}
+
+/* Portfolio/Product Section Override */
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+    background: rgba(0, 86, 166, 0.9);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .product-img {
+        height: 180px;
+    }
+    
+    .member-login-box {
+        padding: 25px;
+    }
+    
+    .rsh-stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-img {
+        height: 150px;
+    }
+    
+    .member-login-box {
+        padding: 20px;
+    }
+    
+    .rsh-stat-number {
+        font-size: 2rem;
+    }
+}
